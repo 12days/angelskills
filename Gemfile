@@ -5,6 +5,11 @@ gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+gem 'devise'
+gem 'omniauth'
+gem "omniauth-linkedin"
+
+gem "better_errors", ">= 0.7.2", :group => :development
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
