@@ -41,7 +41,7 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 
-  RSPec.configure do |config|
+  RSpec.configure do |config|
 
     config.include(EmailSpec::Helpers)
     config.include(EmailSpec::Matchers)
@@ -53,7 +53,8 @@ RSpec.configure do |config|
     config.before(:each) do
       DatabaseCleaner.start
     end
-    config.after(:each_) do
+    config.after(:each) do
       DatabaseCleaner.clean 
     end
+  end
 end
