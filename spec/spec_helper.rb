@@ -39,4 +39,17 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+
+  RSPec.configure do |config|
+
+    config.before(:suite) do
+      DatabaseCleaner.strategy = :truncation
+    end
+
+    config.before(:each) do
+      DatabaseCleaner.start
+    end
+    config.after(:each_) do
+      DatabaseCleaner.clean 
+    end
 end
