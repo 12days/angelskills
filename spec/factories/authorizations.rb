@@ -1,8 +1,9 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :user do
-    name "MyString"
-    email "MyString"
+  factory :authorization do
+    provider "MyString"
+    uid "MyString"
+    user_id 1
   end
 end
