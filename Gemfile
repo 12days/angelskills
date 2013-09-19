@@ -5,9 +5,10 @@ gem 'railties'
 gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'	
+gem 'sqlite3'
 gem 'omniauth'
 gem "omniauth-linkedin"
+gem 'linkedin'
 
 source 'https://rubygems.org'
 
@@ -34,7 +35,7 @@ gem "binding_of_caller", ">= 0.6.8", :group => :development
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-# Use jquery as the JavaScript library	
+# Use jquery as the JavaScript library
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
