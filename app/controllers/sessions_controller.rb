@@ -13,8 +13,7 @@ class SessionsController < ApplicationController
       # user = User.new :name => auth_hash["user_info"]["name"], :email => auth_hash["user_info"]['email']
       # user.authorizations.build :provider => auth_hash["provider"], :uid => auth_hash['uid']
       # user.save
-      render :text => 'create user logic pending'
-      # render :text => 'Success! Welcome #{user.name}!'
+      render :text => 'Success! Welcome #{user.name}!'
     end
   end
 
