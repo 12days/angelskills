@@ -10,7 +10,7 @@ gem 'omniauth'
 gem "omniauth-linkedin"
 gem 'linkedin'
 
-source 'https://rubygems.org'
+gem "nifty-generators", :group => :development
 
 group :assets do
   gem 'sass-rails',   '~> 4.0.0'
@@ -59,3 +59,5 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem "mocha", group: :test
