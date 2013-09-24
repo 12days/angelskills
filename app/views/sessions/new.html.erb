@@ -1,2 +1,17 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<html>
+<head>
+  <title>Sessions</title>
+  <%= stylesheet_link_tag "sessions", :media => "all" %>
+</head>
+
+<body>
+  <div class="sessions">
+    <% if current_user %>
+    Welcome <%= current_user.name %>!
+      <%= link_to "Sign Out", signout_path %>
+    <% else %>
+      <%= link_to "Login with LinkedIn", '/auth/linkedin' %>
+    <% end %>
+  </div>
+</body>
+</html>
