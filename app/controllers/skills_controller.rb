@@ -11,7 +11,6 @@ class SkillsController < ApplicationController
     @skill = Skill.new
     @skill.title = params[:skill][:title]
     @skill.save
-    redirect_to skill_path
   end
 
   def show
