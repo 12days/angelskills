@@ -1,12 +1,11 @@
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :token_authenticatable, :confirmable,
-  # :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+
+  include Authentication::ActiveRecordHelpers
+
+  devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :authorizations
   has_many :skills
-  validates :email, :presence => true
+  validates :email, :presence => true # will want to add name later
 
   def add_provider(auth_hash)
     # check if the provider already exists to avoid duplication

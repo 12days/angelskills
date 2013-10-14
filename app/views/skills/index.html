@@ -7,7 +7,12 @@
 <body>
   <div class="skills">
     <h3>Angelskills</h3>
-    <br />
+
+    <% if devise_mapping.omniauthable? %>
+      <%= link_to "Sign in with LinkedIn", omniauth_authorize_path(resource_name, 'linkedin') %>
+    <% end %>
+
+    <br><br>
 
     <% @skills.each do |skill| %>
       <%= link_to skill.name, skill_path(skill) %>

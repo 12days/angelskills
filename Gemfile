@@ -6,6 +6,7 @@ gem 'rails', '4.0.0'
 
 gem 'omniauth'
 gem "omniauth-linkedin"
+gem 'omniauth-angellist', "~> 0.0.7"
 gem 'linkedin'
 gem 'cancan'
 gem "nifty-generators", :group => :development
