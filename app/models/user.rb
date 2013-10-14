@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :authorizations
   has_many :skills
-  validates :name, :email, :presence => true
+  validates :email, :presence => true
 
   def add_provider(auth_hash)
     # check if the provider already exists to avoid duplication

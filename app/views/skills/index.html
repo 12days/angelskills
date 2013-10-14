@@ -6,12 +6,21 @@
 
 <body>
   <div class="skills">
-    Angelskills
+    <h3>Angelskills</h3>
     <br />
+
+    <% @skills.each do |skill| %>
+      <%= link_to skill.name, skill_path(skill) %>
+      <%= skill.description %>
+      <br>
+    <% end %>
+
   </div>
 
-  <div>
-    <p><%= link_to "Login with LinkedIn", "/auth/linkedin" %></p>
+  <br><br>
+
+  <div class="user">
+    <%= link_to "logout", logout_path %>
   </div>
 
 </body>
