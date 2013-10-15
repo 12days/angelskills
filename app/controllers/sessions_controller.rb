@@ -1,9 +1,16 @@
 class SessionsController < ApplicationController
   def new
+    # client = LinkedIn::Client.new(ENV["LINKEDIN_API_KEY"], ENV["LINKEDIN_API_SECRET"])
+    # request_token = client.request_token(:oauth_callback => "http://#{request.host_with_port}/auth/callback")
+    # session[:rtoken] = request_token.token
+    # session[:rsecret] = request_token.secret
+
+    # redirect_to client.request_token.authorize_url
   end
 
   def create
-    auth_hash = request.env['omniauth.auth']
+    auth_hash = request.env['omniauth']
+    # @user = User.find_or_create(auth_hash)
 
     if session[:user_id]
       # Means our user is signed in. Add the authorization to the user
