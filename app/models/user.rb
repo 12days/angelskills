@@ -3,9 +3,8 @@ class User < ActiveRecord::Base
   include Authentication::ActiveRecordHelpers
 
   devise :database_authenticatable, :registerable, :omniauthable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :omniauth_providers => [:linkedin]
   has_many :skills
-  validates :email, :presence => true # will want to add name later
 
   def add_provider(auth_hash)
     # check if the provider already exists to avoid duplication
