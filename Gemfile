@@ -8,6 +8,8 @@ gem 'omniauth'
 gem "omniauth-linkedin"
 gem 'linkedin'
 gem "nifty-generators", :group => :development
+gem 'unicorn'
+gem 'cancan'
 
 group :assets do
   gem 'sass-rails', '~> 4.0.0'

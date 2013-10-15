@@ -1,0 +1,28 @@
+<html>
+<head>
+  <title>Skills</title>
+  <%= stylesheet_link_tag "sessions", :media => "all" %>
+</head>
+
+<body>
+
+  <h2>Angelskills</h2>
+
+  <div class="login">
+    <p><%= link_to "Login with LinkedIn", "/auth/linkedin" %></p>
+  </div>
+
+  <div class="skills">
+    <ul>
+      <% @skills.each do |skill| %>
+      <li>
+        <%= link_to skill.name, skill_path(skill) %>
+        <%= skill.description %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+
+
+</body>
+</html>
