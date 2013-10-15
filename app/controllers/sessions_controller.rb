@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    auth_hash = request.env['omniauth']
+    auth_hash = request.env['omniauth.auth']
     # @user = User.find_or_create(auth_hash)
 
     if session[:user_id]
