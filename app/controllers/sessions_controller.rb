@@ -1,11 +1,11 @@
 class SessionsController < ApplicationController
   def new
-    # client = LinkedIn::Client.new(ENV["LINKEDIN_API_KEY"], ENV["LINKEDIN_API_SECRET"])
-    # request_token = client.request_token(:oauth_callback => "http://#{request.host_with_port}/auth/callback")
-    # session[:rtoken] = request_token.token
-    # session[:rsecret] = request_token.secret
+    client = LinkedIn::Client.new(ENV["LINKEDIN_API_KEY"], ENV["LINKEDIN_API_SECRET"])
+    request_token = client.request_token(:oauth_callback => "http://#{request.host_with_port}/skills/")
+    session[:rtoken] = request_token.token
+    session[:rsecret] = request_token.secret
 
-    # redirect_to client.request_token.authorize_url
+    redirect_to client.request_token.authorize_url
   end
 
   def create

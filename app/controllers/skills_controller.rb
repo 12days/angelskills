@@ -5,7 +5,11 @@ class SkillsController < ApplicationController
   end
 
   def index
-    @skills = Skill.all(:limit => 10)
+    if Skill.first
+      @skills = Skill.all(:limit => 10)
+    else
+      # create new skill
+    end
   end
 
   def create
