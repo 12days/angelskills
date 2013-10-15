@@ -5,8 +5,8 @@ gem 'railties'
 gem 'rails', '4.0.0'
 
 gem 'omniauth'
-gem "omniauth-linkedin"
-gem 'linkedin'
+gem "omniauth-linkedin-oauth2" # authentication
+gem 'linkedin' # API calls
 gem "nifty-generators", :group => :development
 gem 'unicorn'
 gem 'cancan'
