@@ -8,8 +8,13 @@
 
   <h2>Angelskills</h2>
 
-  <div class="login">
-    <p><%= link_to "Login with LinkedIn", "/auth/linkedin" %></p>
+  <div class="sessions">
+    <% if current_user %>
+    Welcome <%= current_user.name %>!
+      <%= link_to "Sign Out", logout_path %>
+    <% else %>
+      <%= link_to "Login via LinkedIn", 'auth/linkedin' %>
+    <% end %>
   </div>
 
   <div class="skills">
@@ -22,7 +27,6 @@
       <% end %>
     </ul>
   </div>
-
 
 </body>
 </html>

@@ -1,30 +1,33 @@
 class SessionsController < ApplicationController
-  def new
-    # client = LinkedIn::Client.new(ENV["LINKEDIN_API_KEY"], ENV["LINKEDIN_API_SECRET"])
-    # request_token = client.request_token(:oauth_callback => "http://#{request.host_with_port}/auth/callback")
-    # session[:rtoken] = request_token.token
-    # session[:rsecret] = request_token.secret
 
-    # redirect_to client.request_token.authorize_url
-  end
+  # def new
+  #   @client = LinkedIn::Client.new(ENV["LINKEDIN_API_KEY"], ENV["LINKEDIN_API_SECRET"])
+  #   request_token = @client.request_token(:oauth_callback => "http://#{request.host_with_port}/auth/linkedin/callback")
+  #   session[:rtoken] = request_token.token
+  #   session[:rsecret] = request_token.secret
+
+  #   redirect_to @client.request_token.authorize_url
+
+  # end
 
   def create
-    auth_hash = request.env['omniauth.auth']
-    # @user = User.find_or_create(auth_hash)
 
-    if session[:user_id]
-      # Means our user is signed in. Add the authorization to the user
-      User.find(session[:user_id]).add_provider(auth_hash)
+    @client = LinkedIn::Client.new(ENV["LINKEDIN_API_KEY"], ENV["LINKEDIN_API_SECRET"])
+    request_token = @client.request_token(:oauth_callback => "http://#{request.host_with_port}/auth/linkedin/callback")
+    session[:rtoken] = request_token.token
+    session[:rsecret] = request_token.secret
 
-      render :text => "Welcome back #{auth_hash.info.nickname}!"
-    else
-      # Log him in or sign him up
-      auth = Authorization.find_or_create(auth_hash)
+    redirect_to @client.request_token.authorize_url
 
-      # Create the session
-      session[:user_id] = auth.user
-      render :text => "Welcome #{auth.user.name}!"
-    end
+    # auth_hash = request.env['omniauth.auth']
+    # if session[:user_id]
+    #   User.find(session[:user_id]).add_provider(auth_hash)
+    # else
+    #   auth = Authorization.find_or_create(auth_hash)
+    #   session[:user_id] = auth.user.id
+    # end
+
+    # redirect_to root_path
   end
 
   def failure
