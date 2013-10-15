@@ -5,12 +5,17 @@ class SkillsController < ApplicationController
   end
 
   def index
-    current_user
+    if Skill.first
+      @skills = Skill.all(:limit => 10)
+    else
+      # create new skill
+    end
   end
 
   def create
     @skill = Skill.new
-    @skill.title = params[:skill][:title]
+    @skill.name = params[:name]
+    @skill.description = params[:description]
     @skill.save
   end
 

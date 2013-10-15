@@ -1,0 +1,32 @@
+<html>
+<head>
+  <title>Skills</title>
+  <%= stylesheet_link_tag "sessions", :media => "all" %>
+</head>
+
+<body>
+
+  <h2>Angelskills</h2>
+
+  <div class="sessions">
+    <% if current_user %>
+    Welcome <%= current_user.name %>!
+      <%= link_to "Sign Out", logout_path %>
+    <% else %>
+      <%= link_to "Login via LinkedIn", 'auth/linkedin' %>
+    <% end %>
+  </div>
+
+  <div class="skills">
+    <ul>
+      <% @skills.each do |skill| %>
+      <li>
+        <%= link_to skill.name, skill_path(skill) %>
+        <%= skill.description %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+
+</body>
+</html>

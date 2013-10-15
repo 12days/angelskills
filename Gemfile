@@ -5,11 +5,14 @@ gem 'railties'
 gem 'rails', '4.0.0'
 
 gem 'omniauth'
-gem "omniauth-linkedin"
-gem 'omniauth-angellist', "~> 0.0.7"
-gem 'linkedin'
-gem 'cancan'
+gem "omniauth-linkedin-oauth2" # authentication
+gem 'linkedin' # API calls
 gem "nifty-generators", :group => :development
+gem 'unicorn'
+gem 'cancan'
+gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
+gem 'debugger'
+gem 'json', '~> 1.8.0'
 
 group :assets do
   gem 'sass-rails', '~> 4.0.0'
