@@ -11,6 +11,8 @@ gem "nifty-generators", :group => :development
 gem 'unicorn'
 gem 'cancan'
 gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
+gem 'debugger'
+gem 'json', '~> 1.8.0'
 
 group :assets do
   gem 'sass-rails', '~> 4.0.0'
