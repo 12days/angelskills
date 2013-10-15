@@ -5,7 +5,7 @@ class SkillsController < ApplicationController
   end
 
   def index
-    @skills = Skill.all(:limit => 10)
+    current_user
   end
 
   def create

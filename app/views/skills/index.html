@@ -14,11 +14,7 @@
 
     <br><br>
 
-    <% @skills.each do |skill| %>
-      <%= link_to skill.name, skill_path(skill) %>
-      <%= skill.description %>
-      <br>
-    <% end %>
+    <%= current_user %>
 
   </div>
 
