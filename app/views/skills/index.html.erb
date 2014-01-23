@@ -13,17 +13,21 @@
     Welcome <%= current_user.name %>!
       <%= link_to "Sign Out", logout_path %>
     <% else %>
-      <%= link_to "Login via LinkedIn", 'auth/linkedin' %>
+      <%= link_to "Login via LinkedIn", linkedin_path %>
     <% end %>
   </div>
 
   <div class="skills">
     <ul>
-      <% @skills.each do |skill| %>
-      <li>
-        <%= link_to skill.name, skill_path(skill) %>
-        <%= skill.description %>
-      </li>
+      <% if @skills %>
+        <% @skills.each do |skill| %>
+        <li>
+          <%= link_to skill.name, skill_path(skill) %>
+          <%= skill.description %>
+        </li>
+        <% end %>
+      <% else %>
+        <p>You have no skills. Login and get some!</p>
       <% end %>
     </ul>
   </div>
